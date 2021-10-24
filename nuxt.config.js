@@ -38,6 +38,7 @@ export default {
     '@nuxtjs/device',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
+    'nuxt-gsap-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -46,7 +47,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-social-meta',
+    [
+      'nuxt-social-meta',
       {
         url: 'Site url',
         title: 'Title',
@@ -58,7 +60,8 @@ export default {
         twitter: '@user',
         twitter_card: 'summary_large_image',
         theme_color: '#theme-color',
-      },
+      }
+    ],
     // Always set sitemap as last item in modules array
     '@nuxtjs/sitemap'
   ],
@@ -71,5 +74,35 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      plugins: {
+        'postcss-nested': {}
+      }
+    },
+  },
+
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true
+    },
+
+    registerEffect: [
+      {
+        name: 'scrollAnimation',
+        effect: (targets, config) => {
+          // eslint-disable-next-line no-undef
+          return gsap.to(targets, {
+            duration: 1.75, 
+            autoAlpha: 1, 
+            ease: 'expo',
+            scrollTrigger: {
+              trigger: targets,
+              start: 'top 50%',
+              markers: config.markers
+            }
+          });
+        }
+      }
+    ]
   }
 }
