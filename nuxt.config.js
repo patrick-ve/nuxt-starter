@@ -62,6 +62,26 @@ export default {
         theme_color: '#theme-color',
       }
     ],
+    [
+      '@nuxtjs/i18n',
+      {
+        defaultLocale: 'nl',
+        noPrefixDefaultLocale: true,
+        vueI18nLoader: true,
+        locales: [
+          {
+            code: 'nl',
+            iso: 'nl-NL',
+            name: 'Nederlands',
+          },
+          {
+            code: 'en',
+            iso: 'en-EN',
+            name: 'English',
+          },
+        ],
+      },
+    ],
     // Always set sitemap as last item in modules array
     '@nuxtjs/sitemap'
   ],
