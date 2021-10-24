@@ -1,0 +1,22 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__nuxt, #__layout {
+  @apply min-h-full w-full overflow-x-hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* purgecss end ignore */
