@@ -60,7 +60,7 @@
     >
       <div class="grid w-1/5 h-auto px-24 place-items-center">
         <nuxt-link to="/" class="grid w-full h-auto lg:text-base xl:text-xl place-items-center">
-          <img src="/images/result-logo-white.svg" alt="Logo Result Recruitment">
+          <img src="/images/result-logo-white.svg" alt="">
         </nuxt-link>
       </div>
       <ul class="flex items-center justify-between h-full lg:w-4/5 xl:w-3/5">

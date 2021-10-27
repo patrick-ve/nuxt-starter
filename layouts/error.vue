@@ -28,7 +28,7 @@ export default {
 
   head() {
     return {
-      title: `Result Recruitment - ${this.error.statusCode === 404 ? '404' : 'Error'}`,
+      title: `${this.error.statusCode === 404 ? '404' : 'Error'}`,
     };
   },
 
